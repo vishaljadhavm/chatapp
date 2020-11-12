@@ -1,21 +1,26 @@
 
-const io = require('socket.io')(8000)
-const port = process.env.PORT || 8000;
+const io = require('socket.io')(8000);
+
 
 const http = require('http');
 
-const hostname = '127.0.0.1';
 
+// // app.use('/index.html' , express.static('JS'));
+// const server = http.createServer((req, res) => {
+//   res.statusCode = 200;
+//   res.status(200).send('index.html');
+  
+// });
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+server.listen(port => {
+  console.log(`Server running at :${port}`);
 });
+// app.get('/index.html' , (req,res)=>{
+     
+     
+//     res.status(200).send('index.html');
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+// });
 // require('browserify') (8000)
 const users = {};
 io.on('connection', socket =>{
